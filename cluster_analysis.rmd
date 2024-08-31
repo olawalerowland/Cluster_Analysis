@@ -1,0 +1,301 @@
+```{r}
+setwd("C:/dir") #Setting the Environment
+data=read.table("Cluster_New.csv", header=TRUE, row.names=1, dec=".", sep=",") #Reading the Table
+library(factoextra) #Loading factoextra library
+```
+```{r}
+dismat1<-dist(data, method = "euclidean") # Calculating the distance, using Euclidean method
+cluster1<-hclust(dismat1, method = "ward.D") #Using ward.D method of Clustering
+plot(cluster1, cex = 0.5)
+dev.copy(png,"Euclidean_Plots/Euclidean_with_Wardd.png", units='in', width=8.5,height=6,res=1200) #Saving the Image
+```
+```{r}
+dismat1<-dist(data, method = "euclidean") # Calculating the distance, using Euclidean method
+cluster2<-hclust(dismat1, method = "ward.D2") #Using ward.D2 method of Clustering
+plot(cluster2, cex = 0.5)
+fviz_dend(cluster2, k = 4, cex = 0.5, k_colors = c("blue", "skyblue", "red"), color_labels_by_k = TRUE, rect = TRUE)
+dev.copy(png,"Euclidean_Plots/Euclidean_with_Wardd2.png", units='in', width=8.5,height=6,res=1200)
+ #Saving the Image
+```
+```{r}
+dismat1<-dist(data, method = "euclidean") # Calculating the distance, using Euclidean method
+cluster3<-hclust(dismat1, method = "single") #Using ward.D method of Clustering
+plot(cluster3, cex = 0.5)
+dev.copy(png,"Euclidean_Plots/Euclidean_with_single.png", units='in', width=8.5,height=6,res=1200) #Saving the Image
+```
+```{r}
+dismat1<-dist(data, method = "euclidean") # Calculating the distance, using Euclidean method
+cluster4<-hclust(dismat1, method = "complete") #Using ward.D method of Clustering
+plot(cluster4, cex = 0.5)
+dev.copy(png,"Euclidean_Plots/Euclidean_with_complete.png", units='in', width=8.5,height=6,res=1200) #Saving the Image
+```
+```{r}
+dismat1<-dist(data, method = "euclidean") # Calculating the distance, using Euclidean method
+cluster5<-hclust(dismat1, method = "average") #Using ward.D method of Clustering
+plot(cluster5, cex = 1)
+fviz_dend(cluster5, k = 3, cex = 0.5, k_colors = c("blue", "skyblue", "red"), color_labels_by_k = TRUE, rect = TRUE)
+dev.copy(png,"Euclidean_Plots/Euclidean_with_average_New.png", units='in', width=8.5,height=6,res=1200)
+ #Saving the Image
+```
+```{r}
+dismat1<-dist(data, method = "euclidean") # Calculating the distance, using Euclidean method
+cluster6<-hclust(dismat1, method = "mcquitty") #Using ward.D method of Clustering
+plot(cluster6, cex = 0.5)
+dev.copy(png,"Euclidean_Plots/Euclidean_with_mcquitty.png", units='in', width=8.5,height=6,res=1200) #Saving the Image
+```
+```{r}
+dismat1<-dist(data, method = "euclidean") # Calculating the distance, using Euclidean method
+cluster7<-hclust(dismat1, method = "median") #Using ward.D method of Clustering
+plot(cluster7, cex = 0.5)
+dev.copy(png,"Euclidean_Plots/Euclidean_with_median.png", units='in', width=8.5,height=6,res=1200) #Saving the Image
+```
+```{r}
+dismat1<-dist(data, method = "euclidean") # Calculating the distance, using Euclidean method
+cluster8<-hclust(dismat1, method = "centroid") #Using ward.D method of Clustering
+plot(cluster8, cex = 0.5)
+dev.copy(png,"Euclidean_Plots/Euclidean_with_centroid.png", units='in', width=8.5,height=6,res=1200) #Saving the Image
+```
+```{r}
+dismat2<-dist(data, method = "maximum") # Calculating the distance, using maximum method
+cluster1b<-hclust(dismat2, method = "ward.D") #Using ward.D method of Clustering
+plot(cluster1b, cex = 0.5)
+fviz_dend(cluster1b, k = 3, cex = 0.5, k_colors = c("blue", "skyblue", "red"), color_labels_by_k = TRUE, rect = TRUE)
+dev.copy(png,"Maximum_Plots/Maximum_with_Wardd.png", units='in', width=8.5,height=6,res=1200) #Saving the Image
+```{r}
+dismat2<-dist(data, method = "maximum") # Calculating the distance, using maximum method
+cluster2b<-hclust(dismat2, method = "ward.D2") #Using ward.D2 method of Clustering
+plot(cluster2b, cex = 0.5)
+dev.copy(png,"Maximum_Plots/Maximum_with_Wardd2.png", units='in', width=8.5,height=6,res=1200) #Saving the Image
+```
+```{r}
+dismat2<-dist(data, method = "maximum") # Calculating the distance, using maximum method
+cluster3b<-hclust(dismat2, method = "single") #Using ward.D method of Clustering
+plot(cluster3b, cex = 0.5)
+dev.copy(png,"Maximum_Plots/Maximum_with_single.png", units='in', width=8.5,height=6,res=1200) #Saving the Image
+```
+```{r}
+dismat2<-dist(data, method = "maximum") # Calculating the distance, using maximum method
+cluster4b<-hclust(dismat2, method = "complete") #Using ward.D method of Clustering
+plot(cluster4b, cex = 0.5)
+dev.copy(png,"Maximum_Plots/Maximum_with_complete.png", units='in', width=8.5,height=6,res=1200) #Saving the Image
+```
+```{r}
+dismat2<-dist(data, method = "maximum") # Calculating the distance, using maximum method
+cluster5b<-hclust(dismat2, method = "average") #Using ward.D method of Clustering
+plot(cluster5b, cex = 0.5)
+dev.copy(png,"Maximum_Plots/Maximum_with_average.png", units='in', width=8.5,height=6,res=1200) #Saving the Image
+```
+```{r}
+dismat2<-dist(data, method = "maximum") # Calculating the distance, using maximum method
+cluster6b<-hclust(dismat2, method = "mcquitty") #Using ward.D method of Clustering
+plot(cluster6b, cex = 0.5)
+dev.copy(png,"Maximum_Plots/Maximum_with_mcquitty.png", units='in', width=8.5,height=6,res=1200) #Saving the Image
+```
+```{r}
+dismat2<-dist(data, method = "maximum") # Calculating the distance, using maximum method
+cluster7b<-hclust(dismat2, method = "median") #Using ward.D method of Clustering
+plot(cluster7b, cex = 0.5)
+dev.copy(png,"Maximum_Plots/Maximum_with_median.png", units='in', width=8.5,height=6,res=1200) #Saving the Image
+```
+```{r}
+dismat2<-dist(data, method = "maximum") # Calculating the distance, using maximum method
+cluster8b<-hclust(dismat2, method = "centroid") #Using ward.D method of Clustering
+plot(cluster8b, cex = 0.5)
+dev.copy(png,"Maximum_Plots/Maximum_with_centroid.png", units='in', width=8.5,height=6,res=1200) #Saving the Image
+```
+```{r}
+dismat3<-dist(data, method = "manhattan") # Calculating the distance, using manhattan method
+cluster1c<-hclust(dismat3, method = "ward.D") #Using ward.D method of Clustering
+plot(cluster1c, cex = 0.5)
+dev.copy(png,"Manhattan_Plots/Manhattan_with_Wardd.png", units='in', width=8.5,height=6,res=1200) #Saving the Image
+```
+```{r}
+dismat3<-dist(data, method = "manhattan") # Calculating the distance, using manhattan method
+cluster2c<-hclust(dismat3, method = "ward.D2") #Using ward.D2 method of Clustering
+plot(cluster2c, cex = 0.5)
+dev.copy(png,"Manhattan_Plots/Manhattan_with_Wardd2.png", units='in', width=8.5,height=6,res=1200) #Saving the Image
+```
+```{r}
+dismat3<-dist(data, method = "manhattan") # Calculating the distance, using manhattan method
+cluster3c<-hclust(dismat3, method = "single") #Using ward.D method of Clustering
+plot(cluster3c, cex = 0.5)
+dev.copy(png,"Manhattan_Plots/Manhattan_with_single.png", units='in', width=8.5,height=6,res=1200) #Saving the Image
+```
+```{r}
+dismat3<-dist(data, method = "manhattan") # Calculating the distance, using manhattan method
+cluster4c<-hclust(dismat3, method = "complete") #Using ward.D method of Clustering
+plot(cluster4c, cex = 0.5)
+dev.copy(png,"Manhattan_Plots/Manhattan_with_complete.png", units='in', width=8.5,height=6,res=1200) #Saving the Image
+```
+
+```{r}
+dismat3<-dist(data, method = "manhattan") # Calculating the distance, using manhattan method
+cluster5c<-hclust(dismat3, method = "average") #Using ward.D method of Clustering
+plot(cluster5c, cex = 0.5)
+dev.copy(png,"Manhattan_Plots/Manhattan_with_average.png", units='in', width=8.5,height=6,res=1200) #Saving the Image
+```
+```{r}
+dismat3<-dist(data, method = "manhattan") # Calculating the distance, using manhattan method
+cluster6c<-hclust(dismat3, method = "mcquitty") #Using ward.D method of Clustering
+plot(cluster6c, cex = 0.5)
+dev.copy(png,"Manhattan_Plots/Manhattan_with_mcquitty.png", units='in', width=8.5,height=6,res=1200) #Saving the Image
+```
+```{r}
+dismat3<-dist(data, method = "manhattan") # Calculating the distance, using manhattan method
+cluster7c<-hclust(dismat3, method = "median") #Using ward.D method of Clustering
+plot(cluster7c, cex = 0.5)
+dev.copy(png,"Manhattan_Plots/Manhattan_with_median.png", units='in', width=8.5,height=6,res=1200) #Saving the Image
+```
+```{r}
+dismat3<-dist(data, method = "manhattan") # Calculating the distance, using manhattan method
+cluster8c<-hclust(dismat3, method = "centroid") #Using ward.D method of Clustering
+plot(cluster8c, cex = 0.5)
+dev.copy(png,"Manhattan_Plots/Manhattan_with_centroid.png", units='in', width=8.5,height=6,res=1200) #Saving the Image
+```
+```{r}
+dismat4<-dist(data, method = "canberra") # Calculating the distance, using canberra method
+cluster1d<-hclust(dismat4, method = "ward.D") #Using ward.D method of Clustering
+plot(cluster1d, cex = 0.5)
+dev.copy(png,"Canberra_Plots/Canberra_with_Wardd.png", units='in', width=8.5,height=6,res=1200) #Saving the Image
+```
+```{r}
+dismat4<-dist(data, method = "canberra") # Calculating the distance, using canberra method
+cluster2d<-hclust(dismat4, method = "ward.D2") #Using ward.D2 method of Clustering
+plot(cluster2d, cex = 0.5)
+dev.copy(png,"Canberra_Plots/Canberra_with_Wardd2.png", units='in', width=8.5,height=6,res=1200) #Saving the Image
+```
+```{r}
+dismat4<-dist(data, method = "canberra") # Calculating the distance, using canberra method
+cluster3d<-hclust(dismat4, method = "single") #Using ward.D method of Clustering
+plot(cluster3d, cex = 0.5)
+dev.copy(png,"Canberra_Plots/Canberra_with_single.png", units='in', width=8.5,height=6,res=1200) #Saving the Image
+```
+```{r}
+dismat4<-dist(data, method = "canberra") # Calculating the distance, using canberra method
+cluster4d<-hclust(dismat4, method = "complete") #Using ward.D method of Clustering
+plot(cluster4d, cex = 0.5)
+dev.copy(png,"Canberra_Plots/Canberra_with_complete.png", units='in', width=8.5,height=6,res=1200) #Saving the Image
+```
+```{r}
+dismat4<-dist(data, method = "canberra") # Calculating the distance, using canberra method
+cluster5d<-hclust(dismat4, method = "average") #Using ward.D method of Clustering
+plot(cluster5d, cex = 0.5)
+dev.copy(png,"Canberra_Plots/Canberra_with_average.png", units='in', width=8.5,height=6,res=1200) #Saving the Image
+```
+```{r}
+dismat4<-dist(data, method = "canberra") # Calculating the distance, using canberra method
+cluster6d<-hclust(dismat4, method = "mcquitty") #Using ward.D method of Clustering
+plot(cluster6d, cex = 0.5)
+dev.copy(png,"Canberra_Plots/Canberra_with_mcquitty.png", units='in', width=8.5,height=6,res=1200) #Saving the Image
+```
+```{r}
+dismat4<-dist(data, method = "canberra") # Calculating the distance, using canberra method
+cluster7d<-hclust(dismat4, method = "median") #Using ward.D method of Clustering
+plot(cluster7d, cex = 0.5)
+dev.copy(png,"Canberra_Plots/Canberra_with_median.png", units='in', width=8.5,height=6,res=1200) #Saving the Image
+```
+```{r}
+dismat4<-dist(data, method = "canberra") # Calculating the distance, using canberra method
+cluster8d<-hclust(dismat4, method = "centroid") #Using ward.D method of Clustering
+plot(cluster8d, cex = 0.5)
+dev.copy(png,"Canberra_Plots/Canberra_with_centroid.png", units='in', width=8.5,height=6,res=1200) #Saving the Image
+```
+```{r}
+dismat5<-dist(data, method = "binary") # Calculating the distance, using binary method
+cluster1e<-hclust(dismat5, method = "ward.D") #Using ward.D method of Clustering
+plot(cluster1e, cex = 0.5)
+dev.copy(png,"Binary_Plots/binary_with_Wardd.png", units='in', width=8.5,height=6,res=1200) #Saving the Image
+```
+```{r}
+dismat5<-dist(data, method = "binary") # Calculating the distance, using binary method
+cluster2e<-hclust(dismat5, method = "ward.D2") #Using ward.D2 method of Clustering
+plot(cluster2e, cex = 0.5)
+dev.copy(png,"Binary_Plots/binary_with_Wardd2.png", units='in', width=8.5,height=6,res=1200) #Saving the Image
+```
+```{r}
+dismat5<-dist(data, method = "binary") # Calculating the distance, using binary method
+cluster3e<-hclust(dismat5, method = "single") #Using ward.D method of Clustering
+plot(cluster3e, cex = 0.5)
+dev.copy(png,"Binary_Plots/binary_with_single.png", units='in', width=8.5,height=6,res=1200) #Saving the Image
+```
+```{r}
+dismat5<-dist(data, method = "binary") # Calculating the distance, using binary method
+cluster4e<-hclust(dismat5, method = "complete") #Using ward.D method of Clustering
+plot(cluster4e, cex = 0.5)
+dev.copy(png,"Binary_Plots/binary_with_complete.png", units='in', width=8.5,height=6,res=1200) #Saving the Image
+```
+```{r}
+dismat5<-dist(data, method = "binary") # Calculating the distance, using binary method
+cluster5e<-hclust(dismat5, method = "average") #Using ward.D method of Clustering
+plot(cluster5e, cex = 0.5)
+dev.copy(png,"Binary_Plots/binary_with_average.png", units='in', width=8.5,height=6,res=1200) #Saving the Image
+```
+```{r}
+dismat5<-dist(data, method = "binary") # Calculating the distance, using binary method
+cluster6e<-hclust(dismat5, method = "mcquitty") #Using ward.D method of Clustering
+plot(cluster6e, cex = 0.5)
+dev.copy(png,"Binary_Plots/binary_with_mcquitty.png", units='in', width=8.5,height=6,res=1200) #Saving the Image
+```
+
+```{r}
+dismat5<-dist(data, method = "binary") # Calculating the distance, using binary method
+cluster7e<-hclust(dismat5, method = "median") #Using ward.D method of Clustering
+plot(cluster7e, cex = 0.5)
+dev.copy(png,"Binary_Plots/binary_with_median.png", units='in', width=8.5,height=6,res=1200) #Saving the Image
+```
+```{r}
+dismat5<-dist(data, method = "binary") # Calculating the distance, using binary method
+cluster8e<-hclust(dismat5, method = "centroid") #Using ward.D method of Clustering
+plot(cluster8e, cex = 0.5)
+dev.copy(png,"Binary_Plots/binary_with_centroid.png", units='in', width=8.5,height=6,res=1200) #Saving the Image
+```
+```{r}
+dismat6<-dist(data, method = "minkowski") # Calculating the distance, using minkowski method
+cluster1f<-hclust(dismat6, method = "ward.D") #Using ward.D method of Clustering
+plot(cluster1f, cex = 0.5)
+dev.copy(png,"Minkowski_Plots/minkowski_with_Wardd.png", units='in', width=8.5,height=6,res=1200) #Saving the Image
+```
+```{r}
+dismat6<-dist(data, method = "minkowski") # Calculating the distance, using minkowski method
+cluster2f<-hclust(dismat6, method = "ward.D2") #Using ward.D2 method of Clustering
+plot(cluster2f, cex = 0.5)
+dev.copy(png,"Minkowski_Plots/minkowski_with_Wardd2.png", units='in', width=8.5,height=6,res=1200) #Saving the Image
+```
+```{r}
+dismat6<-dist(data, method = "minkowski") # Calculating the distance, using minkowski method
+cluster3f<-hclust(dismat6, method = "single") #Using ward.D method of Clustering
+plot(cluster3f, cex = 0.5)
+dev.copy(png,"Minkowski_Plots/minkowski_with_single.png", units='in', width=8.5,height=6,res=1200) #Saving the Image
+```
+```{r}
+dismat6<-dist(data, method = "minkowski") # Calculating the distance, using minkowski method
+cluster4f<-hclust(dismat6, method = "complete") #Using ward.D method of Clustering
+plot(cluster4f, cex = 0.5)
+dev.copy(png,"Minkowski_Plots/minkowski_with_complete.png", units='in', width=8.5,height=6,res=1200) #Saving the Image
+```
+```{r}
+dismat6<-dist(data, method = "minkowski") # Calculating the distance, using minkowski method
+cluster5f<-hclust(dismat6, method = "average") #Using ward.D method of Clustering
+plot(cluster5f, cex = 0.5)
+dev.copy(png,"Minkowski_Plots/minkowski_with_average.png", units='in', width=8.5,height=6,res=1200) #Saving the Image
+```
+```{r}
+dismat6<-dist(data, method = "minkowski") # Calculating the distance, using minkowski method
+cluster6f<-hclust(dismat6, method = "mcquitty") #Using ward.D method of Clustering
+plot(cluster6f, cex = 0.5)
+dev.copy(png,"Minkowski_Plots/minkowski_with_mcquitty.png", units='in', width=8.5,height=6,res=1200) #Saving the Image
+```
+```{r}
+dismat6<-dist(data, method = "minkowski") # Calculating the distance, using minkowski method
+cluster7f<-hclust(dismat6, method = "median") #Using ward.D method of Clustering
+plot(cluster7f, cex = 0.5)
+dev.copy(png,"Minkowski_Plots/minkowski_with_median.png", units='in', width=8.5,height=6,res=1200) #Saving the Image
+```
+```{r}
+dismat6<-dist(data, method = "minkowski") # Calculating the distance, using minkowski method
+cluster8f<-hclust(dismat6, method = "centroid") #Using ward.D method of Clustering
+plot(cluster8f, cex = 0.5)
+dev.copy(png,"Minkowski_Plots/minkowski_with_centroid.png", units='in', width=8.5,height=6,res=1200) #Saving the Image
+#End of the Programme
+```
+
